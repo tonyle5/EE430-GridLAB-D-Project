@@ -1,0 +1,17 @@
+object transformer_configuration {
+    name XFC400;
+    connect_type 2;
+    power_rating 6000;
+    primary_voltage 12470;
+    secondary_voltage 4160;
+    resistance 0.01;
+    reactance 0.06;
+}
+
+object transformer {
+    name substation_transformer;
+    phases A|B|C;
+    from Node2;
+    to substation_meter;
+    configuration XFC400;
+}

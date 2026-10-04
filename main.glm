@@ -1,0 +1,33 @@
+#set profiler=1
+module tape;
+module powerflow;
+module residential {
+    implicit_enduses NONE;
+};
+
+clock {
+    timestamp '2021-12-25 00:00:00';
+    stoptime '2021-12-25 23:59:00';
+    timezone PST8;
+}
+
+// ==========================================
+// 1. PROVIDED CONNECTION MODEL (PRIMARY NETWORK)
+// ==========================================
+#include "line_configs.glm";
+#include "primary_topology.glm";
+
+
+// ==========================================
+// 2. PROJECT CONNECTION POINT
+// ==========================================
+// Load centralized parameters (ZIP, water heater specs, file paths, units)
+#include "project_constants.glm";
+
+// Connect the shared project transformer and secondary node to Node 4
+#include "shared_transformer.glm";
+
+// Connect the 3 downstream houses to the shared_node
+#include "house1.glm";
+#include "house2.glm";
+#include "house3.glm";

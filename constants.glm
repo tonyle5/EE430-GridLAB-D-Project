@@ -1,0 +1,60 @@
+// --- ZIP LOAD CONFIGURATION ---
+
+// P_FRAC: The fraction of the load that behaves as constant power (independent of voltage).
+// I_FRAC: The fraction of the load that behaves as constant current (scales linearly with voltage).
+// Z_FRAC: The fraction of the load that behaves as constant impedance (scales with the square of voltage).
+// PF_VAL: The power factor applied to the load (set to 0.95 lagging for all cases)[cite: 8].
+
+#define PF_VAL=0.95
+
+// --- CASE 1: Constant Power ---
+#define P_FRAC=1.0
+#define I_FRAC=0.0
+#define Z_FRAC=0.0
+
+// --- CASE 2: Constant Current ---
+//#define P_FRAC=0.0
+//#define I_FRAC=1.0
+//#define Z_FRAC=0.0
+
+// --- CASE 3: Constant Impedance ---
+//#define P_FRAC=0.0
+//#define I_FRAC=0.0
+//#define Z_FRAC=1.0
+
+// --- CASE 4: Mixed (40% Impedance, 30% Current, 30% Power)[cite: 8] ---
+//#define P_FRAC=0.3
+//#define I_FRAC=0.3
+//#define Z_FRAC=0.4
+
+// --- WATER HEATER CONFIGURATION ---
+#define WH_LOCATION=INSIDE  // Indoor location
+#define WH_SETPOINT=120     // Tank temperature setpoint in degrees Fahrenheit (°F)
+#define WH_DEADBAND=2       // Thermostat deadband in degrees Fahrenheit (°F)
+#define WH_VOL=50           // Tank volume in gallons
+#define WH_CAPACITY=4.5     // Heating element capacity in kilowatts (kW)
+#define WH_INLET=60         // Inlet water temperature in degrees Fahrenheit (°F)
+#define WH_UA=3.3           // Tank overall heat transfer coefficient (UA) in Btu/(h·°F)
+
+// --- FILE PATH CONFIGURATIONS ---
+// House 1 Files
+#define H1_METER_OUT=house1_meter_data.csv
+#define H1_DEMAND_IN=house1_demand.csv
+#define H1_WATER_IN=house1_water_draw.csv
+#define H1_WH_OUT=house1_wh_data.csv
+
+// House 2 Files
+#define H2_METER_OUT=house2_meter_data.csv
+#define H2_DEMAND_IN=house2_demand.csv
+#define H2_WATER_IN=house2_water_draw.csv
+#define H2_WH_OUT=house2_wh_data.csv
+
+// House 3 Files
+#define H3_METER_OUT=house3_meter_data.csv
+#define H3_DEMAND_IN=house3_demand.csv
+#define H3_WATER_IN=house3_water_draw.csv
+#define H3_WH_OUT=house3_wh_data.csv
+
+// --- UNIT CONFIGURATIONS ---
+// Set to kW or W
+#define DEMAND_UNIT=kW

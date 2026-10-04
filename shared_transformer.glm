@@ -1,0 +1,32 @@
+object transformer_configuration {
+    name PoleTop;
+    connect_type SINGLE_PHASE_CENTER_TAPPED;
+    power_rating 400;
+    powerC_rating 400;
+    primary_voltage 2400;
+    secondary_voltage 120;
+    resistance 0.01;
+    reactance 0.06;
+}
+
+// The shared secondary node that splits the transformer to the three houses
+object triplex_node {
+    name shared_node;
+    phases CS;
+    nominal_voltage 120;
+}
+
+// The single shared project transformer
+object transformer {
+    name distribution_transformer;
+    phases CS;
+    from Node4; // Connects to the primary network
+    to shared_node;
+    configuration PoleTop;
+
+    object recorder {
+        property power_in, power_out, current_in, current_out;
+        interval 60;
+        file "transformer_data.csv";
+    };
+}

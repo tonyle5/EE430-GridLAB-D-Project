@@ -1,0 +1,54 @@
+// house2.glm
+object triplex_meter {
+    name meter_house2;
+    parent shared_node;
+    phases CS;
+    nominal_voltage 120;
+    
+    object recorder {
+        property measured_voltage_1, measured_voltage_2, measured_current_1, measured_current_2, measured_power;
+        interval 60;
+        file "${H2_METER_OUT}"; 
+    };
+    
+    object triplex_load {
+        name load_house2;
+        phases CS;
+        nominal_voltage 120;
+        
+        power_fraction_12 ${P_FRAC};
+        impedance_fraction_12 ${Z_FRAC};
+        current_fraction_12 ${I_FRAC};
+        power_pf_12 ${PF_VAL};
+        current_pf_12 ${PF_VAL};
+        impedance_pf_12 ${PF_VAL};
+        
+        object player {
+            property base_power_12[${DEMAND_UNIT}];
+            file "${H2_DEMAND_IN}"; 
+        };
+    };
+    
+    object waterheater {
+        name wh_house2;
+        location ${WH_LOCATION};
+        temperature ${WH_SETPOINT};
+        tank_setpoint ${WH_SETPOINT}; 
+        tank_volume ${WH_VOL};  
+        thermostat_deadband ${WH_DEADBAND}; 
+        heating_element_capacity ${WH_CAPACITY} kW;
+        inlet_water_temperature ${WH_INLET};
+        tank_UA ${WH_UA};
+        
+        object player {
+            property water_demand; // gpm
+            file "${H2_WATER_IN}"; 
+        };
+        
+        object recorder {
+            property temperature, actual_load;
+            interval 60;
+            file "${H2_WH_OUT}"; 
+        };
+    };
+}

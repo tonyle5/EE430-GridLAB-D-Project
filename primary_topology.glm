@@ -1,0 +1,82 @@
+// ==========================================
+// primary_topology.glm
+// The main 4-node feeder structure
+// ==========================================
+
+object node {
+    name Node1;
+    bustype SWING;
+    phases A|B|C;
+    voltage_A +7199.558+0.000j;
+    voltage_B -3599.779-6235.000j;
+    voltage_C -3599.779+6235.000j;
+    nominal_voltage 7199.558;
+}
+
+object overhead_line {
+    name Link12;
+    phases A|B|C;
+    from Node1;
+    to Node2;
+    length 2000;
+    configuration LC300;
+    nominal_voltage 7199.558;
+}
+
+object node {
+    name Node2;
+    phases A|B|C;
+    voltage_A +7199.558+0.000j;
+    voltage_B -3599.779-6235.000j;
+    voltage_C -3599.779+6235.000j;
+    nominal_voltage 7199.558;
+}
+
+// ------------------------------------------
+// Step down from 12470V to 4160V
+#include "substation_transformer.glm";
+// ------------------------------------------
+
+object meter {
+    name substation_meter;
+    phases ABCN;
+    nominal_voltage 4160;
+}
+
+object overhead_line {
+    name branch;
+    phases A|B|C;
+    from substation_meter;
+    to Node3;
+    length 2000;
+    configuration LC300;
+    nominal_voltage 2401.777;
+}
+
+object node {
+    name Node3;
+    phases A|B|C;
+    voltage_A +2401.777+0.000j;
+    voltage_B -1200.889-2080.000j;
+    voltage_C -1200.889+2080.000j;
+    nominal_voltage 4160;
+}
+
+object overhead_line {
+    name branch1;
+    phases A|B|C;
+    from Node3;
+    to Node4;
+    length 2000;
+    configuration LC300;
+    nominal_voltage 4160;
+}
+
+object node {
+    name Node4;
+    phases A|B|C;
+    voltage_A +2401.777+0.000j;
+    voltage_B -1200.889-2080.000j;
+    voltage_C -1200.889+2080.000j;
+    nominal_voltage 4160;
+}

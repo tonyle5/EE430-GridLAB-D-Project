@@ -1,0 +1,46 @@
+// ==========================================
+// line_configs.glm
+// Contains all overhead and triplex conductor specifications
+// ==========================================
+
+object line_configuration {
+    name LC300;
+    conductor_A OH100;
+    conductor_B OH100;
+    conductor_C OH100;
+    conductor_N OH101;
+    spacing LS200;
+}
+object line_spacing {
+    name LS200;
+    distance_AB 2.5;
+    distance_BC 4.5;
+    distance_AC 7.0;
+    distance_AN 5.656854;
+    distance_BN 4.272002;
+    distance_CN 5.0;
+}
+object overhead_line_conductor {
+    name OH100;
+    geometric_mean_radius 0.0244;
+    resistance 0.306;
+}
+object overhead_line_conductor {
+    name OH101;
+    geometric_mean_radius 0.00814;
+    resistance 0.592;
+}
+
+object triplex_line_configuration {
+    name triplex_line_config;
+    conductor_1 Name_1_0_AA_triplex;
+    conductor_2 Name_1_0_AA_triplex;
+    conductor_N Name_1_0_AA_triplex;
+    insulation_thickness 0.1;
+    diameter 0.4;
+}
+object triplex_line_conductor {
+    name Name_1_0_AA_triplex;
+    resistance 0.57;
+    geometric_mean_radius 0.0111;
+}
