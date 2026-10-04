@@ -6,7 +6,7 @@ object triplex_meter {
     nominal_voltage 120;
     
     object recorder {
-        property measured_voltage_1, measured_voltage_2, measured_current_1, measured_current_2, measured_power;
+        property measured_voltage_1, measured_voltage_2, measured_current_1, measured_current_2, measured_real_power, measured_power;
         interval 60;
         file "${H3_METER_OUT}"; 
     };
@@ -46,7 +46,7 @@ object triplex_meter {
         };
         
         object recorder {
-            property temperature, actual_load;
+            property temperature, actual_load, water_demand;
             interval 60;
             file "${H3_WH_OUT}"; 
         };

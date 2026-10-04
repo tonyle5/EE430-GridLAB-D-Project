@@ -17,7 +17,6 @@ clock {
 #include "line_configs.glm";
 #include "primary_topology.glm";
 
-
 // ==========================================
 // 2. PROJECT CONNECTION POINT
 // ==========================================
