@@ -57,7 +57,3 @@
 
 // Transformer File
 #define SHARED_TRANSFORMER_OUT=outputs/transformer_data.csv
-
-// --- UNIT CONFIGURATIONS ---
-// Set to kW or W
-#define DEMAND_UNIT=kW

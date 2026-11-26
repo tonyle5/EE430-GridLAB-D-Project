@@ -24,31 +24,37 @@ object triplex_meter {
         impedance_pf_12 ${PF_VAL};
         
         object player {
-            property base_power_12[${DEMAND_UNIT}];
+            property base_power_12;
             file "${H3_DEMAND_IN}"; 
         };
     };
     
-    object waterheater {
-        name wh_house3;
-        location ${WH_LOCATION};
-        temperature ${WH_SETPOINT};
-        tank_setpoint ${WH_SETPOINT}; 
-        tank_volume ${WH_VOL};  
-        thermostat_deadband ${WH_DEADBAND}; 
-        heating_element_capacity ${WH_CAPACITY} kW;
-        inlet_water_temperature ${WH_INLET};
-        tank_UA ${WH_UA};
-        
-        object player {
-            property water_demand; // gpm
-            file "${H3_WATER_IN}"; 
-        };
-        
-        object recorder {
-            property temperature, actual_load, water_demand;
-            interval 60;
-            file "${H3_WH_OUT}"; 
+    object house {
+        name house3;
+        heating_system_type NONE;
+        cooling_system_type NONE;
+
+        object waterheater {
+            name wh_house3;
+            location ${WH_LOCATION};
+            temperature ${WH_SETPOINT};
+            tank_setpoint ${WH_SETPOINT}; 
+            tank_volume ${WH_VOL};  
+            thermostat_deadband ${WH_DEADBAND}; 
+            heating_element_capacity ${WH_CAPACITY} kW;
+            inlet_water_temperature ${WH_INLET};
+            tank_UA ${WH_UA};
+            
+            object player {
+                property water_demand; // gpm
+                file "${H3_WATER_IN}"; 
+            };
+            
+            object recorder {
+                property temperature, actual_load, water_demand;
+                interval 60;
+                file "${H3_WH_OUT}"; 
+            };
         };
     };
 }
