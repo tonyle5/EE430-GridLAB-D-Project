@@ -9,6 +9,10 @@ object transformer_configuration {
     reactance 0.06;
 }
 
+// T-LINE: A B [C] (choose C)
+// PRI: C
+// SEC: 120V N 120V (split phase)
+
 // The shared secondary node that splits the transformer to the three houses
 object triplex_node {
     name shared_node;
@@ -25,8 +29,8 @@ object transformer {
     configuration PoleTop;
 
     object recorder {
-        property power_in, power_out, current_in, current_out;
+        property power_in, power_out, current_in_C, current_out_A, current_out_B;
         interval 60;
-        file "transformer_data.csv";
+        file "${SHARED_TRANSFORMER_OUT}";
     };
 }

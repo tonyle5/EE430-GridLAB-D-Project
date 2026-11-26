@@ -21,7 +21,7 @@ clock {
 // 2. PROJECT CONNECTION POINT
 // ==========================================
 // Load centralized parameters (ZIP, water heater specs, file paths, units)
-#include "project_constants.glm";
+#include "constants.glm";
 
 // Connect the shared project transformer and secondary node to Node 4
 #include "shared_transformer.glm";

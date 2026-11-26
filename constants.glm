@@ -38,22 +38,25 @@
 
 // --- FILE PATH CONFIGURATIONS ---
 // House 1 Files
-#define H1_METER_OUT=house1_meter_data.csv
-#define H1_DEMAND_IN=house1_demand.csv
-#define H1_WATER_IN=house1_water_draw.csv
-#define H1_WH_OUT=house1_wh_data.csv
+#define H1_METER_OUT=outputs/meter_data1.csv
+#define H1_DEMAND_IN=inputs/house_profile_1.csv
+#define H1_WATER_IN=inputs/water_draw.csv
+#define H1_WH_OUT=outputs/water_heater1.csv
 
 // House 2 Files
-#define H2_METER_OUT=house2_meter_data.csv
-#define H2_DEMAND_IN=house2_demand.csv
-#define H2_WATER_IN=house2_water_draw.csv
-#define H2_WH_OUT=house2_wh_data.csv
+#define H2_METER_OUT=outputs/meter_data2.csv
+#define H2_DEMAND_IN=inputs/house_profile_2.csv
+#define H2_WATER_IN=inputs/water_draw.csv
+#define H2_WH_OUT=outputs/water_heater2.csv
 
 // House 3 Files
-#define H3_METER_OUT=house3_meter_data.csv
-#define H3_DEMAND_IN=house3_demand.csv
-#define H3_WATER_IN=house3_water_draw.csv
-#define H3_WH_OUT=house3_wh_data.csv
+#define H3_METER_OUT=outputs/meter_data3.csv
+#define H3_DEMAND_IN=inputs/house_profile_3.csv
+#define H3_WATER_IN=inputs/water_draw.csv
+#define H3_WH_OUT=outputs/water_heater3.csv
+
+// Transformer File
+#define SHARED_TRANSFORMER_OUT=outputs/transformer_data.csv
 
 // --- UNIT CONFIGURATIONS ---
 // Set to kW or W
