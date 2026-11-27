@@ -23,8 +23,8 @@ clock {
 // Load centralized parameters (ZIP, water heater specs, file paths, units)
 #include "constants.glm";
 
-// Connect the shared project transformer and secondary node to Node 4
-#include "shared_transformer.glm";
+// Connect the shared distribution transformer and secondary node to Node 4
+#include "distribution_xfmr.glm";
 
 // Connect the 3 downstream houses to the shared_node
 #include "house1.glm";

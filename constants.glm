@@ -56,4 +56,4 @@
 #define H3_WH_OUT=outputs/water_heater3.csv
 
 // Transformer File
-#define SHARED_TRANSFORMER_OUT=outputs/transformer_data.csv
+#define DISTRIBUTION_XFMR_OUT=outputs/distribution_xfmr_data.csv

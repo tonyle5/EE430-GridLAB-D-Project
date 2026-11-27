@@ -24,13 +24,13 @@ object triplex_node {
 object transformer {
     name distribution_transformer;
     phases CS;
-    from Node4; // Connects to the primary network
+    from Node4; // Connects to the primary networkW
     to shared_node;
     configuration PoleTop;
 
     object recorder {
         property power_in, power_out, current_in_C, current_out_A, current_out_B;
         interval 60;
-        file "${SHARED_TRANSFORMER_OUT}";
+        file "${DISTRIBUTION_XFMR_OUT}";
     };
 }
