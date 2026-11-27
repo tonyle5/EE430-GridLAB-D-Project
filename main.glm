@@ -1,6 +1,8 @@
 #set profiler=1
 module tape;
-module powerflow;
+module powerflow {
+    solver_method NR;
+};
 module residential {
     implicit_enduses NONE;
 };
