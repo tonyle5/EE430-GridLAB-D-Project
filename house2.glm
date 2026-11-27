@@ -35,7 +35,7 @@ object triplex_meter {
         cooling_system_type NONE;
 
         object waterheater {
-            name wh_house2;
+            name waterheater2;
             location ${WH_LOCATION};
             temperature ${WH_SETPOINT};
             tank_setpoint ${WH_SETPOINT}; 
